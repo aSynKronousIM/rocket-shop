@@ -38,6 +38,32 @@ var productSeeds = [
             "name": "Red Planet Love Machine"
         }
     },
+    {
+        "sku": "johnny-liftoff",
+        "name": "Rocket Boost Pack",
+        "image": "johnny-liftoff.jpg",
+        "summary": "Why walk when you can fly?",
+        "description": "The Martina surface is scarred by huge numbers of craters",
+        "price": 123939,
+        "vendor": {
+            "id": 2,
+            "slug": "red-planet",
+            "name": "Red Planet Love Machine"
+        }
+    },
+    {
+        "sku": "one-way-reentry",
+        "name": "One Way Reentry",
+        "image": "one-way-reentry.jpg",
+        "summary": "Buy on for yourself or the one you love!",
+        "description": "The Martina surface is scarred by huge numbers of craters",
+        "price": 938295,
+        "vendor": {
+            "id": 2,
+            "slug": "red-planet",
+            "name": "Red Planet Love Machine"
+        }
+    }
 ];
 
 if (Products.find().count() === 0) {
