@@ -38,7 +38,7 @@ var productSeeds = [
         "name": "Your Very Own Crater",
         "image": "your-own-crater.jpg",
         "summary": "Buy on for yourself or the one you love!",
-        "description": "The Martina surface is scarred by huge numbers of craters",
+        "description": "The Martian surface is scarred by huge numbers of craters",
         "price": 99995,
         "inventory": 99,
         "status": "published",
@@ -62,9 +62,9 @@ var productSeeds = [
         "published_at": new Date(),
         "cost": 2320,
         "vendor": {
-            "id": 2,
-            "slug": "red-planet",
-            "name": "Red Planet Love Machine"
+            "id": 1,
+            "slug": "martian-armaments",
+            "name": "Martian Armaments, Ltd"
         }
     },
     {
@@ -79,9 +79,9 @@ var productSeeds = [
         "published_at": new Date(),
         "cost": 2320,
         "vendor": {
-            "id": 2,
-            "slug": "red-planet",
-            "name": "Red Planet Love Machine"
+            "id": 3,
+            "slug": "marinaris",
+            "name": "Marinaris Outfitters"
         }
     }
 ];
@@ -104,5 +104,33 @@ if (Meteor.users.find().count() === 0) {
 
     Roles.addUsersToRoles(id, ["Administrator"]);
     console.log("Added Admin user...");
+}
+
+if (Vendors.find().count() === 0) {
+    var vendors = [
+        {
+            id: 1,
+            slug: "martian-armaments",
+            name: "Martian Armaments, Ltd",
+            description: "Purveyor of fine astronomical bits of warfare."
+        },
+        {
+            id: 2,
+            slug: "red-planet",
+            name: "Red Planet Love Machine",
+            description: "Bringing you closer to the ones you love, whatever planet."
+        },
+        {
+            id: 3,
+            slug: "marinaris",
+            name: "Marinaris Outfitters",
+            description: "Get out and get fit on Mars! Marinaris will sure you do."
+        }
+    ];
+
+    _.each(vendors, function(vendor) {
+        Vendors.insert(vendor);
+        console.log("Added ", vendor.name);
+    })
 }
 
